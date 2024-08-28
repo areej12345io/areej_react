@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { MapProvider } from './MapContext';
+import Mapcomponent from './Mapcomponent';
+import Sidebarcomponent from './Sidebarcomponent';
+import HeaderComponent from './HeaderComponent'; // Import the HeaderComponent
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MapProvider>
+      <HeaderComponent /> {/* Include HeaderComponent at the top */}
+      <Sidebarcomponent />
+     
+    <Mapcomponent />
+    </MapProvider>
   );
 }
 
